@@ -17,3 +17,19 @@ cd john/src
 # Compile
 ./configure && make -sj$(nproc)
 ```
+
+---
+### rar2john
+
+To crack hash from .rar files we can use **rar2john**
+
+```
+# Extract hash from .rar file
+./rar2john secure.rar > rar_hash.txt
+
+# Crack extracted password from *.rar
+./john --wordlist=/usr/share/wordlists/rockyou.txt rar_hash.txt
+
+# Show decrypted password 
+./john --show rar_hash.txt
+```
