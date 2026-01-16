@@ -33,6 +33,18 @@ john --list=formats
 John store all crack password in file named "john.pot" so if you want to clean logs you need to clean what it is inside
 
 ---
+### unshadow
+
+```
+# Command to unshadow files
+./unshadow /etc/passwd /etc/shadow > unshadow.txt
+
+# with unshadow file you can use crack it with normal john
+john --list=formats
+
+```
+
+---
 ### Zip2john
 
 To crack hash from .zip files we can use **zip2john**
