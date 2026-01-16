@@ -1,8 +1,10 @@
 # John the Ripper
 
-At first its good to mentions that when you install John directly 'apt install john' you will miss Jumbo John extension
+At first, it is good to mention that when you install John directly using  
+`apt install john`, you will miss the **Jumbo John** extensions.
 
-You need to intall it form official repo:
+You need to install it from the official repository:
+
 ```
 # APT local is up to date (For Debian-base)
 sudo apt update
@@ -23,71 +25,91 @@ cd john/src
 To identify hash https://github.com/psypanda/hashID
 
 ```
-# Basic
-./john --format=[format] --wordlist=[path to wordlist] [path to file]
+# Basic usage
+./john --format=[format] --wordlist=[path_to_wordlist] [hash_file]
 
-# Use it to find format you need
-john --list=formats
+# List supported formats
+./john --list=formats
 
 ```
-John store all crack password in file named "john.pot" so if you want to clean logs you need to clean what it is inside
+John stores all cracked passwords in a file named john.pot.
+If you want to start from scratch, delete its contents.
 
+---
+### Single Crack Mode
+
+Single mode uses the username/login as a password base and automatically applies internal rules.
+
+```
+./john --single --format=[format] [hash_file]
+```
+
+Works best when the hash file contains usernames.
+
+```
+# Wrong
+da150121d7a0800cf23193b2a34867ea38301f07
+
+# Good
+nick:da150121d7a0800cf23193b2a34867ea38301f07
+```
 ---
 ### unshadow
 
 ```
-# Command to unshadow files
+# Combine passwd and shadow files
 ./unshadow /etc/passwd /etc/shadow > unshadow.txt
 
-# with unshadow file you can use crack it with normal john
-john --list=formats
+# Crack using john
+./john unshadow.txt
 
 ```
 
 ---
 ### Zip2john
 
-To crack hash from .zip files we can use **zip2john**
+To crack hashes from .zip files we can use zip2john.
 
 ```
-# Extract hash from .rar file
+# Extract hash from .zip file
 ./zip2john secure.zip > zip_hash.txt
 
-# Crack extracted password from *.rar
+# Crack extracted hash
 ./john --wordlist=/usr/share/wordlists/rockyou.txt zip_hash.txt
 
-# Show decrypted password 
+# Show cracked password
 ./john --show zip_hash.txt
 ```
 
 ---
 ### rar2john
 
-To crack hash from .rar files we can use **rar2john**
+To crack hashes from .rar files we can use rar2john.
 
 ```
 # Extract hash from .rar file
 ./rar2john secure.rar > rar_hash.txt
 
-# Crack extracted password from *.rar
+# Crack extracted hash
 ./john --wordlist=/usr/share/wordlists/rockyou.txt rar_hash.txt
 
-# Show decrypted password 
+# Show cracked password
 ./john --show rar_hash.txt
 ```
 
 ---
 ### ssh2john
 
-ssh2john is modul to convert private key that is used to login to SSH session into hash that later we can use to extract passowrd
+ssh2john is a module used to convert an SSH private key into a hash
+that can be cracked with John.
 
 ```
-# Extract hash from .rar file
-python3 ./ssh2john.py id_rsa  > id_rsa_hash.txt
+# Extract hash from SSH private key
+python3 ./ssh2john.py id_rsa > id_rsa_hash.txt
 
-# Crack extracted hash with normal john
-./john --wordlist=/usr/share/wordlists/rockyou.txt rar_hash.txt
+# Crack extracted hash
+./john --wordlist=/usr/share/wordlists/rockyou.txt id_rsa_hash.txt
 
-# Show decrypted password 
-./john --show rar_hash.txt
+# Show cracked passphrase
+./john --show id_rsa_hash.txt
 ```
