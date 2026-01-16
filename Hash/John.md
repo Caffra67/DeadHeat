@@ -18,6 +18,21 @@ cd john/src
 ./configure && make -sj$(nproc)
 ```
 ---
+### Basic
+
+To identify hash https://github.com/psypanda/hashID
+
+```
+# Basic
+./john --format=[format] --wordlist=[path to wordlist] [path to file]
+
+# Use it to find format you need
+john --list=formats
+
+```
+John store all crack password in file named "john.pot" so if you want to clean logs you need to clean what it is inside
+
+---
 ### Zip2john
 
 To crack hash from .zip files we can use **zip2john**
