@@ -46,10 +46,16 @@ hashcat -m 10 -a 3 [file with hash] ?l?l?l?d?d?d
 ```
 
 ?l	abcdefghijklmnopqrstuvwxyz
+
 ?u	ABCDEFGHIJKLMNOPQRSTUVWXYZ
+
 ?d	123456789
+
 ?h	0123456789abcdef
+
 ?H	0123456789ABCDEF
+
 ?s	!”#$%&'()*+,-./:;<=>?@[\]^_`{|}~
-?a 	?l?u?d?s
+
 ?b 	0x00 – 0xff
+
