@@ -8,8 +8,8 @@ hashcat -m 10 -a 0 [file with hash] [wordlst]
 
 ---
 
-at **-m** you need to decide what hash type is used 
-at it thos links can help you
+With -m you need to specify the hash type being used.
+The following links can help you identify the correct hash mode:
 
 https://hashcat.net/wiki/doku.php?id=hashcat
 
@@ -21,18 +21,20 @@ https://www.tunnelsup.com/hash-analyzer/
 
 ---
 
-**-a 0** most basic attack type its just use wordlist you privide
+**-a 0** (Straight attack)
 
-**-a 1** this one combine words form wordlist for example "pass" and "123"
-attack type 1 whoud use it like that
+The most basic attack type. It uses a single wordlist and tries each entry as a password candidate.
+
+**-a 1** (Combination attack)
+
+Uses two wordlists and combines each word from the first list with each word from the second list.
+For example, combining pass from the first wordlist and 123 from the second wordlist will produce pass123.
 
 ```
-pass
-123
-pass123
+hashcat -a 1 hashes.txt wordlist1.txt wordlist2.txt
 ```
 
-**-a 3** Mask attack 
+**-a 3** (Mask attack)
 
 Used when you know the password pattern but not the exact characters.
 Instead of a wordlist, you define a mask that describes the character type for each position.
