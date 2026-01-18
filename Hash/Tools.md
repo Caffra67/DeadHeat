@@ -1,39 +1,46 @@
-# Tools list 
+# Tools List
 
-List for tool that is worth checking 
+A list of tools worth checking.
 
-## Hash-Crackers
+## Hash Crackers
 
-**John the Ripper (Jumbo)** Most versatile tool 
+**John the Ripper (Jumbo)**
+The most versatile password‑cracking tool.
 
-https://github.com/openwall/john
+[https://github.com/openwall/john](https://github.com/openwall/john)
 
-**HashCat** Basic hash-cracker
+**Hashcat**
+Basic and high‑performance hash‑cracking tool.
 
-https://hashcat.net/wiki/doku.php?id=hashcat
+[https://hashcat.net/wiki/doku.php?id=hashcat](https://hashcat.net/wiki/doku.php?id=hashcat)
 
-https://hashcat.net/wiki/doku.php?id=example_hashes
+[https://hashcat.net/wiki/doku.php?id=example_hashes](https://hashcat.net/wiki/doku.php?id=example_hashes)
 
-## Hash Identication
+## Hash Identification
 
-**Haiti** With my tasting most acurate hash idenctification 
+**Haiti**
+In my experience, one of the most accurate hash identification tools.
 
-https://noraj.github.io/haiti/#/
+[https://noraj.github.io/haiti/#/](https://noraj.github.io/haiti/#/)
 
 ## Wordlists
 
-**wordlistctl** Word list searcher
+**wordlistctl**
+Wordlist search and management tool.
 
-https://github.com/BlackArch/wordlistctl
+[https://github.com/BlackArch/wordlistctl](https://github.com/BlackArch/wordlistctl)
 
-**Mentalist** Helps with modifivation wordlists 
+**Mentalist**
+Helps with generating and modifying wordlists.
 
-https://github.com/sc0tfree/mentalist
+[https://github.com/sc0tfree/mentalist](https://github.com/sc0tfree/mentalist)
 
-**CeWL** CeWL crawls a target website and collects unique words from its pages (above a chosen length) to generate a custom wordlist
+**CeWL**
+Crawls a target website and collects unique words from its pages (above a chosen length) to generate a custom wordlist.
 
-https://github.com/digininja/CeWL
+[https://github.com/digininja/CeWL](https://github.com/digininja/CeWL)
 
-**pnwgen** Phone number Wordlist Generator
+**pnwgen**
+Phone number wordlist generator.
 
-https://github.com/toxydose/pnwgen
+[https://github.com/toxydose/pnwgen](https://github.com/toxydose/pnwgen)
