@@ -2,7 +2,7 @@
 
 List for tool that is worth checking 
 
-### Hash-Crackers
+## Hash-Crackers
 
 **John the Ripper (Jumbo)** Most versatile tool 
 
@@ -14,13 +14,13 @@ https://hashcat.net/wiki/doku.php?id=hashcat
 
 https://hashcat.net/wiki/doku.php?id=example_hashes
 
-### Hash Identication
+## Hash Identication
 
 **Haiti** With my tasting most acurate hash idenctification 
 
 https://noraj.github.io/haiti/#/
 
-### Wordlists
+## Wordlists
 
 **wordlistctl** Word list searcher
 
