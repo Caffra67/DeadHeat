@@ -62,7 +62,6 @@ nick:da150121d7a0800cf23193b2a34867ea38301f07
 
 # Crack using john
 ./john unshadow.txt
-
 ```
 
 ---
