@@ -74,14 +74,7 @@ if (isset($_GET['cmd'])) {
 
 How it works
 
-The script checks if the cmd parameter is present in the HTTP GET request
-
-If it exists, the value is passed directly to the system() function
-
-The command is executed on the underlying operating system
-
-The output is returned in the HTTP response
-
+The script checks if the cmd parameter is present in the HTTP GET request If it exists, the value is passed directly to the system() function The command is executed on the underlying operating system The output is returned in the HTTP response
 
 ```
 http://files.lookup.thm/rce.php?cmd=id
