@@ -1,6 +1,7 @@
 # Telnet 
 
-Its used to connect to virtual terminal of another computer. Telnet protocol is an apllication layer and operate at port **23**
+Its used to connect to virtual terminal of another computer. Telnet protocol is an apllication layer and operate at
+Port: **23**
 Data security: Cleartext
 
 ### Example
@@ -73,7 +74,8 @@ Accept-Ranges: bytes
 
 # FTP
 
-File Transfer Protocol (FTP) is used to transfer files between differenct computeres wirh different systems efficient. FTP operate on port 21 
+File Transfer Protocol (FTP) is used to transfer files between differenct computeres wirh different systems efficient. FTP operate on 
+Port: 21 
 Data security: Cleartext
 
 ```
@@ -101,4 +103,51 @@ local: README.txt remote: README.txt
 4006 bytes received in 00:00 (32.40 KiB/s)
 ftp> exit
 221 Goodbye.
+```
+
+# SMTP
+
+It’s a standard method computers use to send emails across the internet. SMTP handles the process of transferring a message from the sender’s mail server to the recipient’s mail server, making sure the email reaches the right destination.
+Port: 25
+Data security: Cleartext
+
+Email delivery over the Internet requires the following components:
+
+- Mail Submission Agent (MSA)
+- Mail Transfer Agent (MTA)
+- Mail Delivery Agent (MDA)
+- Mail User Agent (MUA)
+
+# POP3
+
+POP3 in English is Post Office Protocol version 3.
+It’s a simple protocol that allows an email program to download messages from a mail server to a local device. The client connects to the POP3 server, logs in, retrieves new emails, and can optionally delete them from the server afterward.
+
+```
+$ telnet 10.0.0.1 110
+Trying 10.0.0.1...
+Connected to 10.0.0.1.
+Escape character is '^]'.
++OK 10.0.0.1 Mail Server POP3 Wed, 15 Sep 2021 11:05:34 +0300 
+USER frank
++OK frank
+PASS D2xc9CgD
++OK 1 messages (179) octets
+STAT
++OK 1 179
+LIST
++OK 1 messages (179) octets
+1 179
+.
+RETR 1
++OK
+From: Mail Server 
+To: Frank 
+subject: Sending email with Telnet
+Hello Frank,
+I am just writing to say hi!
+.
+QUIT
++OK 10.65.171.239 closing connection
+Connection closed by foreign host.
 ```
