@@ -40,6 +40,12 @@ nc -lvnp 4444
 
 After this, the shell should behave more like a normal interactive Bash shell.
 
+If you deal with Windows shell for better stability you can use rlwrap
+
+```
+rlwrap nc -lvnp <port>
+```
+
 # Bind Shell
 
 A bind shell opens a listening port on the compromised system. When an attacker connects to this port, the system exposes a shell, allowing the attacker to execute commands remotely.
